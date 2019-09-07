@@ -1,4 +1,8 @@
 from flask import Flask
+from thrift_app.app import Server
+
+server = Server()
+server.run()
 
 app = Flask(__name__)
 
