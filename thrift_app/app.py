@@ -12,6 +12,7 @@ class Server():
 
         host_ = '0.0.0.0'
         port_ = '8881'
+
         transport = TSocket.TServerSocket(host=host_, port=port_)
         tfactory = TTransport.TFramedTransportFactory()
         pfactory = TBinaryProtocol.TBinaryProtocolFactory()
@@ -33,6 +34,5 @@ class Server():
                                 pfactory, timeout=0.1, batchSize=10)
         server.serve()
 
-
-server = Server()
-
+app = Server()
+# server.run()
