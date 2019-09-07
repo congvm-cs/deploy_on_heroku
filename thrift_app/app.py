@@ -3,9 +3,9 @@ class Server():
         pass
         
     def run(self):
-        from handler.handler import Model
-        from ThriftZMQ.server.TModelProcessor import Processor
-        from ThriftZMQ.server.TModelPoolServer import TModelPoolServer
+        from .handler.handler import Model
+        from .ThriftZMQ.server.TModelProcessor import Processor
+        from .ThriftZMQ.server.TModelPoolServer import TModelPoolServer
         from thrift.transport import TSocket
         from thrift.transport import TTransport
         from thrift.protocol import TBinaryProtocol
