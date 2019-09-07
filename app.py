@@ -6,15 +6,13 @@ from client import TPredictResult
 from multiprocessing import Process
 
 server = Server()
-client = MyClient(host='localhost', port='5050')
+client = MyClient(host='localhost', port='5051')
 app = Flask(__name__)
 
 
 @app.route('/predict/', methods=['GET', 'POST'])
 def predict():
-    # print(request.is_json)
     inputs = request.get_json()
-    # print(inputs)
     ret = client.predict(inputs)
     dict_ret = eval(ret.jsonResult)
     return jsonify(dict_ret)
@@ -24,16 +22,13 @@ def predict():
 def index():
     return render_template("index.html")
 
-# def runFServer(app, host, port):
-#     app.debug = True
-#     app.run(host, port)
 
 if __name__ == '__main__':
     FServer = Process(target=app.run, args=('0.0.0.0', '5000', ))
     FServer.daemon = True
     FServer.start()
 
-    server.run(host='localhost', port='5050')
+    server.run(host='localhost', port='5051')
     # TServer = Process(target=server.run, args=('0.0.0.0', 5050, ))
     # TServer.daemon=True
     # TServer.start()
