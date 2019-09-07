@@ -43,6 +43,9 @@
             $('#result').text('  Predicting...');
             var $SCRIPT_ROOT = {{ request.script_root| tojson | safe
         }};
+
+
+        console.log($SCRIPT_ROOT)
         // var canvasObj = document.getElementById("canvas");
         // var img = canvasObj.toDataURL('image/png');
         var valInput = document.getElementById('inp_value').value
@@ -56,6 +59,7 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data),
             url: $SCRIPT_ROOT + "/predict/",
+            // url: "localhost:5000" + "/predict/",
             success: function (data) {
                 $('#result').text('Value x 2 = ' + data["result"]);
             }
