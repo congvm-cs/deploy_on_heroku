@@ -29,14 +29,11 @@ def index():
 #     app.run(host, port)
 
 if __name__ == '__main__':
-    # app.debug = True
-
-    FServer = Process(target=app.run, args=('0.0.0.0', '5000', ))
+    FServer = Process(target=app.run, args=('localhost', '5000', ))
     FServer.daemon = True
     FServer.start()
 
-    server.run(host='0.0.0.0', port='5050')
-
+    server.run(host='localhost', port='5050')
     # TServer = Process(target=server.run, args=('0.0.0.0', 5050, ))
     # TServer.daemon=True
     # TServer.start()
