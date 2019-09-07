@@ -6,7 +6,7 @@ from client import TPredictResult
 from multiprocessing import Process
 
 server = Server()
-client = MyClient()
+client = MyClient(host='localhost', port='5050')
 app = Flask(__name__)
 
 
@@ -29,7 +29,7 @@ def index():
 #     app.run(host, port)
 
 if __name__ == '__main__':
-    FServer = Process(target=app.run, args=('192.168.2.120', '5000', ))
+    FServer = Process(target=app.run, args=('0.0.0.0', '5000', ))
     FServer.daemon = True
     FServer.start()
 

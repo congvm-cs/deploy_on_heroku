@@ -8,7 +8,7 @@ from ThriftApp.ThriftZMQ.client.ModelServing import Client
 from ThriftApp.ThriftZMQ.client.ttypes import *
 
 class MyClient():
-    def __init__(self, host='0.0.0.0', port='5050'):
+    def __init__(self, host='localhost', port='5050'):
         self.socket = TSocket.TSocket(host, port)
         self.transport = TTransport.TFramedTransport(self.socket)
         self.protocol = TBinaryProtocol.TBinaryProtocol(self.transport)
