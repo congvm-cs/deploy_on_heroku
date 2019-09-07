@@ -1,5 +1,5 @@
-from ThriftZMQ.server.helper import get_env_tf
-from ThriftZMQ.server.handler_base import ModelBase
+from ThriftApp.ThriftZMQ.server.helper import get_env_tf
+from ThriftApp.ThriftZMQ.server.handler_base import ModelBase
 import numpy as np
 
 

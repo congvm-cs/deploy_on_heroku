@@ -1,5 +1,5 @@
 from flask import Flask
-from thrift_app.app import Server
+from ThriftApp.Server import Server
 
 server = Server()
 server.run()
