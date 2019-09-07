@@ -2,7 +2,7 @@ class Server():
     def __init__(self):
         pass
         
-    def run(self, port='0.0.0.0', host='5050'):
+    def run(self, host='0.0.0.0', port='5050'):
         from .handler.handler import Model
         from .ThriftZMQ.server.TModelProcessor import Processor
         from .ThriftZMQ.server.TModelPoolServer import TModelPoolServer
