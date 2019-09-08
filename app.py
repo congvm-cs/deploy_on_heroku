@@ -6,7 +6,7 @@ from client import TPredictResult
 from multiprocessing import Process
 
 server = Server()
-server.run(host='localhost', port='5051')
+# server.run(host='localhost', port='5051')
 client = MyClient(host='localhost', port='5051')
 app = Flask(__name__)
 
@@ -24,12 +24,11 @@ def index():
     return render_template("index.html")
 
 
-# if __name__ == '__main__':
-#     # FServer = Process(target=app.run, args=('0.0.0.0', '5000', ))
-#     # FServer.daemon = True
-#     # FServer.start()
-
-#     server.run(host='localhost', port='5051')
+if __name__ == '__main__':
+    FServer = Process(target=app.run, args=('0.0.0.0', '5000', ))
+    FServer.daemon = True
+    FServer.start()
+    server.run(host='localhost', port='5051')
 #     # TServer = Process(target=server.run, args=('0.0.0.0', 5050, ))
 #     # TServer.daemon=True
 #     # TServer.start()
